@@ -1,6 +1,6 @@
 ﻿namespace tedt
 {
-    partial class Form1
+    partial class loginForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -102,7 +102,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,9 +115,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(18, 48, 18, 16);
-            this.Text = "Form1";
+            this.Name = "loginForm";
+            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
+            this.Text = "로그인";
+            this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

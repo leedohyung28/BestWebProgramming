@@ -80,8 +80,6 @@ C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.AssemblyReference.cache
-C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Form1.resources
-C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Form2.resources
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Form3.resources
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Properties.Resources.resources
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.GenerateResource.cache
@@ -89,3 +87,5 @@ C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.cs
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.CopyComplete
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.exe
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.pdb
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.loginForm.resources
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.registerForm.resources

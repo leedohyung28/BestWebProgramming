@@ -12,12 +12,12 @@ using MySql.Data.MySqlClient;
 
 namespace tedt
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class loginForm : MetroFramework.Forms.MetroForm
     {
-        private static string connectionString = "server=webp.flykorea.kr;user=w2019136007;database=w2019136007DB;port=13306;password=w2019136007;";
+        private static string connectionString = "server=webp.flykorea.kr;user=bestwebp;database=bestwebpDB;port=13306;password=webp!@#012345;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
 
-        public Form1()
+        public loginForm()
         {
             InitializeComponent();
         }
@@ -65,8 +65,13 @@ namespace tedt
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            registerForm form2 = new registerForm();
             form2.ShowDialog();
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
