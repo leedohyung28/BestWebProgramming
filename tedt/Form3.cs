@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace tedt
 {
-    public partial class Form3 : Form
+    public partial class Form3 : MetroFramework.Forms.MetroForm
     {
         public Form3(string id, string name)
         {

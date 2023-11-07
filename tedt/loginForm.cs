@@ -29,8 +29,8 @@ namespace tedt
 
             try
             {
-                string id = textBox1.Text.ToString();
-                string pass = textBox2.Text.ToString();
+                string id = loginTextBox.Text.ToString();
+                string pass = pwTextBox.Text.ToString();
 
                 if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(pass))
                 {
