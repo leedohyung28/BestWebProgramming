@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace tedt
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         private static string connectionString = "server=webp.flykorea.kr;user=w2019136007;database=w2019136007DB;port=13306;password=w2019136007;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
