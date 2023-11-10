@@ -47,7 +47,7 @@ namespace tedt
                 {
                     string name = reader["uname"].ToString();
 
-                    Form3 form3 = new Form3(id, name);
+                    Form3 form3 = new Form3();
                     form3.ShowDialog();
                 }
                 else
