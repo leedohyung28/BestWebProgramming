@@ -66,8 +66,13 @@ namespace tedt
                     string grade = reader["ugrade"].ToString();
                     string major = reader["umajor"].ToString();
 
+                    this.Visible = false;
                     timeTable timeTable = new timeTable(id, name, grade, major);
+                    timeTable.Owner = this;
                     timeTable.ShowDialog();
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {

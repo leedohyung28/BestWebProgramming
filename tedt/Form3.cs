@@ -12,6 +12,11 @@ namespace tedt
 {
     public partial class Form3 : MetroFramework.Forms.MetroForm
     {
+        string id_init;
+        string name_init;
+        string grade_init;
+        string major_init;
+
         Dictionary<string, int> student19 = new Dictionary<string, int>
         {
             {"기초 교양", 6},
@@ -24,9 +29,13 @@ namespace tedt
             {"IPP", 2},
             {"자유 선택", 9}
         };
-        public Form3()
+        public Form3(string id, string name, string grade, string major)
         {
             InitializeComponent();
+            id_init = id;
+            name_init = name;
+            grade_init = grade;
+            major_init = major;
             CreateProgressBars();
         }
 
@@ -68,6 +77,38 @@ namespace tedt
                 // 다음 컨트롤의 y 위치 업데이트
                 yPoint += progressBar.Height + 10;
             }
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            metroContextMenu1.Show(menuButton, 0, menuButton.Height);
+        }
+
+        private void 시간표ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            timeTable form = new timeTable(id_init, name_init, grade_init, major_init);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
+            this.Close();
+        }
+
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            loginForm form = new loginForm();
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
+            this.Close();
+        }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace tedt
 
         public timeTable() { }
 
+
         public timeTable(string id, string name, string grade, string major)
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace tedt
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.BackColor = Color.White;
             metroTextBox1.KeyDown += TexttextBox1_KeyDown;
+
         }
 
         public MySqlConnection GetMySqlConnection() { return this.connection; }
@@ -278,6 +280,38 @@ namespace tedt
                 connection.Close();
             }
             return sta;
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            metroContextMenu1.Show(menuButton, 0, menuButton.Height);
+        }
+
+        private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Form3 form = new Form3(user.Name, user.Id, user.Grade, user.Major);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
+            this.Close();
+        }
+
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            loginForm form = new loginForm();
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
+            this.Close();
+        }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
