@@ -17,9 +17,25 @@ namespace tedt
         private static string connectionString = "server=webp.flykorea.kr;user=bestwebp;database=bestwebpDB;port=13306;password=webp!@#012345;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
 
+        public bool test = false;
+        TextBox[] txtList;
+        const string IdPlaceholder = "아이디 입력";
+        const string PwPlaceholder = "비밀번호 입력";
+
         public loginForm()
         {
             InitializeComponent();
+
+            txtList = new TextBox[] { loginTextBox, pwTextBox };
+            foreach (var txt in txtList)
+            {
+                txt.ForeColor = Color.DarkGray;
+                if (txt == loginTextBox) txt.Text = IdPlaceholder;
+                else if (txt == pwTextBox) txt.Text = PwPlaceholder;
+
+                txt.GotFocus += RemovePlaceholder;
+                txt.LostFocus += SetPlaceholder;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,6 +43,7 @@ namespace tedt
             MySqlCommand command = connection.CreateCommand();
             connection.Open();
 
+            
             try
             {
                 string id = loginTextBox.Text.ToString();
@@ -46,9 +63,11 @@ namespace tedt
                 if (reader.Read())
                 {
                     string name = reader["uname"].ToString();
+                    string grade = reader["ugrade"].ToString();
+                    string major = reader["umajor"].ToString();
 
-                    Form3 form3 = new Form3();
-                    form3.ShowDialog();
+                    timeTable timeTable = new timeTable(id, name, grade, major);
+                    timeTable.ShowDialog();
                 }
                 else
                 {
@@ -57,8 +76,8 @@ namespace tedt
 
             }
             catch (Exception ex)
-            { 
-                MessageBox.Show(ex.Message, "오류"); 
+            {
+                MessageBox.Show(ex.Message, "오류");
             }
             finally { connection.Close(); }
         }
@@ -72,6 +91,32 @@ namespace tedt
         private void loginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RemovePlaceholder(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            if (txt.Text == IdPlaceholder | txt.Text == PwPlaceholder)
+            {
+                txt.ForeColor = Color.Black;
+                txt.Text = string.Empty;
+                if (txt == pwTextBox) pwTextBox.PasswordChar = '●';
+            }
+        }
+
+        private void SetPlaceholder(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)(sender);
+            if (string.IsNullOrEmpty(txt.Text))
+            {
+                txt.ForeColor = Color.DarkGray;
+                if (txt == loginTextBox) txt.Text = IdPlaceholder;
+                else if (txt == pwTextBox)
+                {
+                    txt.Text = PwPlaceholder;
+                    pwTextBox.PasswordChar = default;
+                }
+            }
         }
     }
 }

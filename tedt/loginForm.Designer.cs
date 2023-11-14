@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.pwTextBox = new System.Windows.Forms.TextBox();
-            this.registerBox = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(507, 186);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "로그인을 해주세요";
             // 
             // label2
             // 
@@ -73,51 +62,49 @@
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(251, 35);
-            this.loginTextBox.TabIndex = 3;
+            this.loginTextBox.TabIndex = 2;
             // 
             // pwTextBox
             // 
             this.pwTextBox.Location = new System.Drawing.Point(511, 374);
             this.pwTextBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.pwTextBox.Name = "pwTextBox";
-            this.pwTextBox.PasswordChar = '•';
             this.pwTextBox.Size = new System.Drawing.Size(251, 35);
-            this.pwTextBox.TabIndex = 4;
-            // 
-            // registerBox
-            // 
-            this.registerBox.AutoSize = true;
-            this.registerBox.Location = new System.Drawing.Point(667, 470);
-            this.registerBox.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.registerBox.Name = "registerBox";
-            this.registerBox.Size = new System.Drawing.Size(106, 24);
-            this.registerBox.TabIndex = 5;
-            this.registerBox.Text = "회원가입";
-            this.registerBox.Click += new System.EventHandler(this.label4_Click);
+            this.pwTextBox.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(823, 270);
+            this.button1.Location = new System.Drawing.Point(824, 258);
             this.button1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 146);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 1;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(511, 457);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 57);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "회원가입";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.label4_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1365, 770);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.registerBox);
             this.Controls.Add(this.pwTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "loginForm";
             this.Padding = new System.Windows.Forms.Padding(33, 120, 33, 32);
@@ -129,14 +116,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox pwTextBox;
-        private System.Windows.Forms.Label registerBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
