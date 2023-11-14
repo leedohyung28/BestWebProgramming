@@ -39,12 +39,21 @@ namespace tedt
 
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.BackColor = Color.White;
+            metroTextBox1.KeyDown += TexttextBox1_KeyDown;
         }
 
         public MySqlConnection GetMySqlConnection() { return this.connection; }
         public MetroGrid GetMetroGrid1() { return this.metroGrid1;}
         public MetroGrid GetMetroGrid2() { return this.metroGrid2; }
         private void setAllGrades() { metroTextBox2.Text = allgrades.ToString(); }
+
+        private void TexttextBox1_KeyDown(object sender, KeyEventArgs e)   // 텍스트박스 이벤트
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터키를 입력받으면 실행
+            {
+                this.metroButton1_Click(sender, e);
+            }
+        }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
