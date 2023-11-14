@@ -11,6 +11,7 @@ namespace tedt
         private TableLayoutPanel tableLayoutPanel;
         private List<Label> timeLabel = new List<Label>();
 
+
         private enum Day { 월 = 1, 화 = 2, 수 = 3, 목 = 4, 금 = 5 }
         private enum Time { A = 1, B = 2 }
 
@@ -58,7 +59,7 @@ namespace tedt
         private void DoPlusLabel(List<int> list, string name, string cls, string professor)
         {
             Random random = new Random();
-            Color randomColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            Color randomColor = Color.FromArgb(random.Next(100, 256), random.Next(100, 256), random.Next(100,256));
 
             for (int i = 0; i < list.Count() / 3; i++)
             {

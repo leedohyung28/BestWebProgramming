@@ -257,17 +257,16 @@ namespace tedt
                             if (checklist[k * 3] == checkvalue[i * 3])
                             {
                                 if ((checklist[k * 3 + 1] <= checkvalue[i * 3 + 1] && checklist[k * 3 + 2] >= checkvalue[i * 3 + 1])
-                                    || (checklist[k * 3 + 1] <= checkvalue[i * 3 + 2] && checklist[k * 3 + 2] >= checkvalue[i * 3 + 2]))
+                                    || (checklist[k * 3 + 1] <= checkvalue[i * 3 + 2] && checklist[k * 3 + 2] >= checkvalue[i * 3 + 2])
+                                    || (checklist[k * 3 + 1] >= checkvalue[i*3+1] && checklist[k*3 +2] <= checkvalue[i*3+2]))
                                 {
                                     sta = false;
                                     throw new Exception(reader["name"].ToString() +" 과목과 시간이 중복됩니다!");
                                 }
-
                             }
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {
