@@ -43,48 +43,50 @@
             this.detailMajorComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.studentNoTextBox = new System.Windows.Forms.TextBox();
+            this.idCheckButton = new System.Windows.Forms.Button();
+            this.studentNoCheckButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // idBox
             // 
-            this.idBox.Location = new System.Drawing.Point(587, 158);
-            this.idBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.idBox.Location = new System.Drawing.Point(158, 78);
+            this.idBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idBox.Name = "idBox";
-            this.idBox.Size = new System.Drawing.Size(264, 35);
+            this.idBox.Size = new System.Drawing.Size(144, 21);
             this.idBox.TabIndex = 1;
             // 
             // pwBox
             // 
-            this.pwBox.Location = new System.Drawing.Point(587, 232);
-            this.pwBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.pwBox.Location = new System.Drawing.Point(158, 115);
+            this.pwBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwBox.Name = "pwBox";
             this.pwBox.PasswordChar = '•';
-            this.pwBox.Size = new System.Drawing.Size(264, 35);
+            this.pwBox.Size = new System.Drawing.Size(144, 21);
             this.pwBox.TabIndex = 2;
             // 
             // pwConfirmBox
             // 
-            this.pwConfirmBox.Location = new System.Drawing.Point(587, 306);
-            this.pwConfirmBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.pwConfirmBox.Location = new System.Drawing.Point(158, 152);
+            this.pwConfirmBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwConfirmBox.Name = "pwConfirmBox";
             this.pwConfirmBox.PasswordChar = '•';
-            this.pwConfirmBox.Size = new System.Drawing.Size(264, 35);
+            this.pwConfirmBox.Size = new System.Drawing.Size(144, 21);
             this.pwConfirmBox.TabIndex = 3;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(587, 380);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.nameTextBox.Location = new System.Drawing.Point(158, 189);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(264, 35);
+            this.nameTextBox.Size = new System.Drawing.Size(144, 21);
             this.nameTextBox.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(899, 542);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.button1.Location = new System.Drawing.Point(484, 271);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(293, 112);
+            this.button1.Size = new System.Drawing.Size(158, 56);
             this.button1.TabIndex = 7;
             this.button1.Text = "회원가입";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,30 +95,27 @@
             // idText
             // 
             this.idText.AutoSize = true;
-            this.idText.Location = new System.Drawing.Point(500, 168);
-            this.idText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.idText.Location = new System.Drawing.Point(111, 83);
             this.idText.Name = "idText";
-            this.idText.Size = new System.Drawing.Size(82, 24);
+            this.idText.Size = new System.Drawing.Size(41, 12);
             this.idText.TabIndex = 8;
             this.idText.Text = "아이디";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(477, 242);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(99, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 9;
             this.label2.Text = "비밀번호";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(425, 316);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(71, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 24);
+            this.label3.Size = new System.Drawing.Size(81, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "비밀번호 확인";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,10 +123,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(522, 390);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(123, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 24);
+            this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 11;
             this.label4.Text = "이름";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,19 +142,17 @@
             "에너지·신소재·화학공학부",
             "산업경영학부",
             "고용서비스정책학과"});
-            this.majorComboBox.Location = new System.Drawing.Point(587, 542);
-            this.majorComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.majorComboBox.Location = new System.Drawing.Point(158, 270);
             this.majorComboBox.Name = "majorComboBox";
-            this.majorComboBox.Size = new System.Drawing.Size(264, 32);
+            this.majorComboBox.Size = new System.Drawing.Size(144, 20);
             this.majorComboBox.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(522, 550);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(123, 274);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 24);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 13;
             this.label5.Text = "학부";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -164,10 +160,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(522, 622);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(123, 310);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 24);
+            this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 14;
             this.label6.Text = "학과";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -175,37 +170,59 @@
             // detailMajorComboBox
             // 
             this.detailMajorComboBox.FormattingEnabled = true;
-            this.detailMajorComboBox.Location = new System.Drawing.Point(587, 614);
-            this.detailMajorComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.detailMajorComboBox.Location = new System.Drawing.Point(158, 306);
             this.detailMajorComboBox.Name = "detailMajorComboBox";
-            this.detailMajorComboBox.Size = new System.Drawing.Size(264, 32);
+            this.detailMajorComboBox.Size = new System.Drawing.Size(144, 20);
             this.detailMajorComboBox.TabIndex = 15;
             this.detailMajorComboBox.DropDown += new System.EventHandler(this.detailMajorComboBox_DropDown);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(522, 468);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(123, 233);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 24);
+            this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 17;
             this.label7.Text = "학번";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // studentNoTextBox
             // 
-            this.studentNoTextBox.Location = new System.Drawing.Point(587, 458);
-            this.studentNoTextBox.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.studentNoTextBox.Location = new System.Drawing.Point(158, 228);
+            this.studentNoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentNoTextBox.Name = "studentNoTextBox";
-            this.studentNoTextBox.Size = new System.Drawing.Size(264, 35);
+            this.studentNoTextBox.Size = new System.Drawing.Size(144, 21);
             this.studentNoTextBox.TabIndex = 18;
+            // 
+            // idCheckButton
+            // 
+            this.idCheckButton.Location = new System.Drawing.Point(332, 78);
+            this.idCheckButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.idCheckButton.Name = "idCheckButton";
+            this.idCheckButton.Size = new System.Drawing.Size(93, 21);
+            this.idCheckButton.TabIndex = 19;
+            this.idCheckButton.Text = "아이디 확인";
+            this.idCheckButton.UseVisualStyleBackColor = true;
+            this.idCheckButton.Click += new System.EventHandler(this.idCheckButton_Click);
+            // 
+            // studentNoCheckButton
+            // 
+            this.studentNoCheckButton.Location = new System.Drawing.Point(332, 229);
+            this.studentNoCheckButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.studentNoCheckButton.Name = "studentNoCheckButton";
+            this.studentNoCheckButton.Size = new System.Drawing.Size(93, 21);
+            this.studentNoCheckButton.TabIndex = 20;
+            this.studentNoCheckButton.Text = "학번 확인";
+            this.studentNoCheckButton.UseVisualStyleBackColor = true;
+            this.studentNoCheckButton.Click += new System.EventHandler(this.studentNoCheckButton_Click);
             // 
             // registerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 720);
+            this.ClientSize = new System.Drawing.Size(700, 360);
+            this.Controls.Add(this.studentNoCheckButton);
+            this.Controls.Add(this.idCheckButton);
             this.Controls.Add(this.studentNoTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.detailMajorComboBox);
@@ -221,11 +238,10 @@
             this.Controls.Add(this.pwConfirmBox);
             this.Controls.Add(this.pwBox);
             this.Controls.Add(this.idBox);
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "registerForm";
-            this.Padding = new System.Windows.Forms.Padding(33, 120, 33, 32);
+            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
             this.Text = "회원가입";
-            this.Load += new System.EventHandler(this.registerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +263,7 @@
         private System.Windows.Forms.ComboBox detailMajorComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox studentNoTextBox;
+        private System.Windows.Forms.Button idCheckButton;
+        private System.Windows.Forms.Button studentNoCheckButton;
     }
 }

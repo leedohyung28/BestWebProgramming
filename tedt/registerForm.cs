@@ -30,16 +30,6 @@ namespace tedt
             {
                 if (pwBox.Text.ToString() != pwConfirmBox.Text.ToString()) throw new Exception("비밀번호를 확인해주세요");
 
-                string id = idBox.Text.ToString();
-                MySqlCommand checkIdCommand = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE uid = @id", connection);
-                checkIdCommand.Parameters.AddWithValue("@id", id);
-
-                int idCount = Convert.ToInt32(checkIdCommand.ExecuteScalar());
-                if (idCount > 0)
-                {
-                    throw new Exception("아이디가 이미 존재합니다.");
-                }
-
                 command.CommandText = "INSERT INTO USER (uid, upwd, uname, umajor, ugrade) VALUES (@id, @password, @name, @major, @grade)";
                 command.Parameters.AddWithValue("@id", idBox.Text.ToString());
                 command.Parameters.AddWithValue("@password", pwBox.Text.ToString());
@@ -160,9 +150,56 @@ namespace tedt
             }
         }
 
-        private void registerForm_Load(object sender, EventArgs e)
+        private void idCheckButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string id = idBox.Text.ToString();
+                MySqlCommand checkIdCommand = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE uid = @id", connection);
+                checkIdCommand.Parameters.AddWithValue("@id", id);
 
+                connection.Open();
+
+                int idCount = Convert.ToInt32(checkIdCommand.ExecuteScalar());
+                if (idCount > 0)
+                {
+                    MessageBox.Show("아이디가 이미 존재합니다.", "경고");
+                }
+                else
+                {
+                    MessageBox.Show("아이디를 사용할 수 있습니다.", "알림");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "오류");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void studentNoCheckButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string studentNo = studentNoTextBox.Text;
+                int prefixYear;
+
+                if (studentNo.Length != 10 || !int.TryParse(studentNo.Substring(0, 4), out prefixYear) || prefixYear < 2000 || prefixYear > 2024)
+                {
+                    MessageBox.Show("올바른 학번을 입력해주세요.", "경고");
+                }
+                else
+                {
+                    MessageBox.Show("학번이 유효합니다.", "알림");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "오류");
+            }
         }
     }
 }
