@@ -12,10 +12,12 @@ namespace tedt
         private static string connectionString = "server=webp.flykorea.kr;user=bestwebp;database=bestwebpDB;port=13306;password=webp!@#012345;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
 
+        private string selected = "23_2";
         public static int allgrades = 0;
         private static ChangeLabel changeLabel = new ChangeLabel();
         private UpdateGrid updateGrid = new UpdateGrid(changeLabel);
         private User user = new User();
+        string[] items = { "23_2", "23_1", "22_2", "22_1", "21_2", "21_1" };
 
         public timeTable() { }
 
@@ -26,6 +28,7 @@ namespace tedt
             user.Name = name;
             user.Grade = grade;
             user.Major = major;
+            updateGrid.dbname = "23_2";
             metroLabel1.Text = "현재사용자: " + user.Name + "(" + user.Major + ")";
             changeLabel.SetTableLayoutPanel(tableLayoutPanel1);
             updateGrid.SetTimeTable(this);
@@ -40,12 +43,15 @@ namespace tedt
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.BackColor = Color.White;
             metroTextBox1.KeyDown += TexttextBox1_KeyDown;
+
+            metroComboBox1.Items.AddRange(items);
+            metroComboBox1.SelectedIndexChanged += new EventHandler(comboBox_SelectedIndexChanged);
         }
 
         public MySqlConnection GetMySqlConnection() { return this.connection; }
         public MetroGrid GetMetroGrid1() { return this.metroGrid1;}
         public MetroGrid GetMetroGrid2() { return this.metroGrid2; }
-        private void setAllGrades() { metroTextBox2.Text = allgrades.ToString(); }
+        public void setAllGrades() { metroTextBox2.Text = allgrades.ToString(); }
 
         private void TexttextBox1_KeyDown(object sender, KeyEventArgs e)   // 텍스트박스 이벤트
         {
@@ -67,7 +73,7 @@ namespace tedt
                 connection.Open();
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT 과목코드, 교과목명, 분반, 대표이수구분, 학점, 개설학부, 학년, 담당교수, 강의시간 FROM LECTURE WHERE 교과목명 LIKE @subject";
+                command.CommandText = "SELECT 과목코드, 교과목명, 분반, 대표이수구분, 학점, 개설학부, 학년, 담당교수, 강의시간 FROM LECTURE" + selected + " WHERE 교과목명 LIKE @subject";
                 command.Parameters.AddWithValue("@subject", subject + "%");
 
                 MySqlDataReader reader = command.ExecuteReader();
@@ -110,8 +116,9 @@ namespace tedt
                 {
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
-                    command.CommandText = "DELETE FROM APPLICATION WHERE id=@ID;";
+                    command.CommandText = "DELETE FROM APPLICATION WHERE id=@ID AND year=@year;";
                     command.Parameters.AddWithValue("@Id", user.Id);
+                    command.Parameters.AddWithValue("@year", selected);
                     command.ExecuteNonQuery();
 
                     metroGrid2.Rows.Clear();
@@ -153,10 +160,11 @@ namespace tedt
 
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
-                    command.CommandText = "INSERT INTO APPLICATION (id, code, name, class, course, point, department, grade, professor, time) VALUES (@Id, @Subject_Code, @Subject_Name, " +
+                    command.CommandText = "INSERT INTO APPLICATION (id, year, code, name, class, course, point, department, grade, professor, time) VALUES (@Id, @year, @Subject_Code, @Subject_Name, " +
                         "@Subject_Class, @Course, @point, @Department, @Grade, @Professor, @Subject_Time)";
 
                     command.Parameters.AddWithValue("@Id", user.Id);
+                    command.Parameters.AddWithValue("@year", selected);
                     command.Parameters.AddWithValue("@Subject_Code", row.Cells["ClassCode"].Value.ToString());
                     command.Parameters.AddWithValue("@Subject_Name", row.Cells["ClassName"].Value.ToString());
                     command.Parameters.AddWithValue("@Subject_Class", row.Cells["ClassNumber"].Value.ToString());
@@ -241,8 +249,9 @@ namespace tedt
                 connection.Open();
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT name, time FROM APPLICATION WHERE id=@Id";
+                command.CommandText = "SELECT name, time FROM APPLICATION WHERE id=@Id AND year=@year";
                 command.Parameters.AddWithValue("@Id", user.Id);
+                command.Parameters.AddWithValue("@year", selected);
 
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -277,6 +286,17 @@ namespace tedt
                 connection.Close();
             }
             return sta;
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selected = metroComboBox1.SelectedItem.ToString();
+            updateGrid.dbname = selected;
+
+            changeLabel.DeleteAllLabel();
+            updateGrid.UpdateDataGridView1();
+            updateGrid.UpdateDataGridView2();
+            updateGrid.LabelUpdate();
         }
 
         private void menuButton_Click(object sender, EventArgs e)

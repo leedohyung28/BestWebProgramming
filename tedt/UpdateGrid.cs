@@ -10,6 +10,7 @@ namespace tedt
         private timeTable tt;
         private MySqlConnection connection;
         private ChangeLabel clabel;
+        public string dbname;
 
         public static BindingList<Lecture> dataSource = new BindingList<Lecture>();
         public static BindingList<Lecture> dataSource2 = new BindingList<Lecture>();
@@ -53,7 +54,7 @@ namespace tedt
                 connection.Open();
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT 과목코드, 교과목명, 분반, 대표이수구분, 학점, 개설학부, 학년, 담당교수, 강의시간 FROM LECTURE";
+                command.CommandText = "SELECT 과목코드, 교과목명, 분반, 대표이수구분, 학점, 개설학부, 학년, 담당교수, 강의시간 FROM LECTURE" + dbname;
 
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -96,8 +97,9 @@ namespace tedt
                 connection.Open();
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM APPLICATION WHERE id=@Id";
+                command.CommandText = "SELECT * FROM APPLICATION WHERE id=@Id AND year=@year";
                 command.Parameters.AddWithValue("@Id", user.Id);
+                command.Parameters.AddWithValue("@year", dbname);
 
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -120,6 +122,7 @@ namespace tedt
 
                 tt.GetMetroGrid2().DataSource = dataSource2;
                 tt.GetMetroGrid2().Refresh();
+                tt.setAllGrades();
             }
             catch (Exception ex)
             {
@@ -138,8 +141,9 @@ namespace tedt
                 connection.Open();
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM APPLICATION WHERE id=@Id";
+                command.CommandText = "SELECT * FROM APPLICATION WHERE id=@Id AND year=@year";
                 command.Parameters.AddWithValue("@Id", user.Id);
+                command.Parameters.AddWithValue("@year", dbname);
 
                 MySqlDataReader reader = command.ExecuteReader();
 
