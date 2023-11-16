@@ -45,11 +45,13 @@
             this.studentNoTextBox = new System.Windows.Forms.TextBox();
             this.idCheckButton = new System.Windows.Forms.Button();
             this.studentNoCheckButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gradeComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // idBox
             // 
-            this.idBox.Location = new System.Drawing.Point(158, 78);
+            this.idBox.Location = new System.Drawing.Point(158, 62);
             this.idBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(144, 21);
@@ -57,7 +59,7 @@
             // 
             // pwBox
             // 
-            this.pwBox.Location = new System.Drawing.Point(158, 115);
+            this.pwBox.Location = new System.Drawing.Point(158, 99);
             this.pwBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwBox.Name = "pwBox";
             this.pwBox.PasswordChar = '•';
@@ -66,7 +68,7 @@
             // 
             // pwConfirmBox
             // 
-            this.pwConfirmBox.Location = new System.Drawing.Point(158, 152);
+            this.pwConfirmBox.Location = new System.Drawing.Point(158, 136);
             this.pwConfirmBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwConfirmBox.Name = "pwConfirmBox";
             this.pwConfirmBox.PasswordChar = '•';
@@ -75,7 +77,7 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(158, 189);
+            this.nameTextBox.Location = new System.Drawing.Point(158, 173);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(144, 21);
@@ -83,10 +85,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(484, 271);
+            this.button1.Location = new System.Drawing.Point(504, 142);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 56);
+            this.button1.Size = new System.Drawing.Size(138, 80);
             this.button1.TabIndex = 7;
             this.button1.Text = "회원가입";
             this.button1.UseVisualStyleBackColor = true;
@@ -95,7 +97,7 @@
             // idText
             // 
             this.idText.AutoSize = true;
-            this.idText.Location = new System.Drawing.Point(111, 83);
+            this.idText.Location = new System.Drawing.Point(111, 64);
             this.idText.Name = "idText";
             this.idText.Size = new System.Drawing.Size(41, 12);
             this.idText.TabIndex = 8;
@@ -104,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 120);
+            this.label2.Location = new System.Drawing.Point(99, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 9;
@@ -113,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 157);
+            this.label3.Location = new System.Drawing.Point(71, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 12);
             this.label3.TabIndex = 10;
@@ -123,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 194);
+            this.label4.Location = new System.Drawing.Point(123, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 11;
@@ -142,7 +144,7 @@
             "에너지·신소재·화학공학부",
             "산업경영학부",
             "고용서비스정책학과"});
-            this.majorComboBox.Location = new System.Drawing.Point(158, 270);
+            this.majorComboBox.Location = new System.Drawing.Point(158, 283);
             this.majorComboBox.Name = "majorComboBox";
             this.majorComboBox.Size = new System.Drawing.Size(144, 20);
             this.majorComboBox.TabIndex = 12;
@@ -150,7 +152,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(123, 274);
+            this.label5.Location = new System.Drawing.Point(123, 286);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 13;
@@ -160,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 310);
+            this.label6.Location = new System.Drawing.Point(123, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 14;
@@ -170,7 +172,7 @@
             // detailMajorComboBox
             // 
             this.detailMajorComboBox.FormattingEnabled = true;
-            this.detailMajorComboBox.Location = new System.Drawing.Point(158, 306);
+            this.detailMajorComboBox.Location = new System.Drawing.Point(158, 319);
             this.detailMajorComboBox.Name = "detailMajorComboBox";
             this.detailMajorComboBox.Size = new System.Drawing.Size(144, 20);
             this.detailMajorComboBox.TabIndex = 15;
@@ -179,7 +181,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(123, 233);
+            this.label7.Location = new System.Drawing.Point(123, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 17;
@@ -188,7 +190,7 @@
             // 
             // studentNoTextBox
             // 
-            this.studentNoTextBox.Location = new System.Drawing.Point(158, 228);
+            this.studentNoTextBox.Location = new System.Drawing.Point(158, 210);
             this.studentNoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentNoTextBox.Name = "studentNoTextBox";
             this.studentNoTextBox.Size = new System.Drawing.Size(144, 21);
@@ -196,7 +198,7 @@
             // 
             // idCheckButton
             // 
-            this.idCheckButton.Location = new System.Drawing.Point(332, 78);
+            this.idCheckButton.Location = new System.Drawing.Point(332, 62);
             this.idCheckButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idCheckButton.Name = "idCheckButton";
             this.idCheckButton.Size = new System.Drawing.Size(93, 21);
@@ -207,7 +209,7 @@
             // 
             // studentNoCheckButton
             // 
-            this.studentNoCheckButton.Location = new System.Drawing.Point(332, 229);
+            this.studentNoCheckButton.Location = new System.Drawing.Point(332, 211);
             this.studentNoCheckButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentNoCheckButton.Name = "studentNoCheckButton";
             this.studentNoCheckButton.Size = new System.Drawing.Size(93, 21);
@@ -216,11 +218,36 @@
             this.studentNoCheckButton.UseVisualStyleBackColor = true;
             this.studentNoCheckButton.Click += new System.EventHandler(this.studentNoCheckButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(123, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "학년";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // gradeComboBox
+            // 
+            this.gradeComboBox.FormattingEnabled = true;
+            this.gradeComboBox.Items.AddRange(new object[] {
+            "1학년",
+            "2학년",
+            "3학년",
+            "4학년 이상"});
+            this.gradeComboBox.Location = new System.Drawing.Point(158, 247);
+            this.gradeComboBox.Name = "gradeComboBox";
+            this.gradeComboBox.Size = new System.Drawing.Size(144, 20);
+            this.gradeComboBox.TabIndex = 21;
+            // 
             // registerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 360);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gradeComboBox);
             this.Controls.Add(this.studentNoCheckButton);
             this.Controls.Add(this.idCheckButton);
             this.Controls.Add(this.studentNoTextBox);
@@ -265,5 +292,7 @@
         private System.Windows.Forms.TextBox studentNoTextBox;
         private System.Windows.Forms.Button idCheckButton;
         private System.Windows.Forms.Button studentNoCheckButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox gradeComboBox;
     }
 }

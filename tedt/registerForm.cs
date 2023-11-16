@@ -30,14 +30,17 @@ namespace tedt
             {
                 if (pwBox.Text.ToString() != pwConfirmBox.Text.ToString()) throw new Exception("비밀번호를 확인해주세요");
 
-                command.CommandText = "INSERT INTO USER (uid, upwd, uname, umajor, ugrade) VALUES (@id, @password, @name, @major, @grade)";
+                command.CommandText = "INSERT INTO USER (uid, upwd, uname, umajor, udetailMajor, ustudentNumber, ugrade) VALUES (@id, @password, @name, @major, @dmajor, @sn, @grade)";
                 command.Parameters.AddWithValue("@id", idBox.Text.ToString());
                 command.Parameters.AddWithValue("@password", pwBox.Text.ToString());
                 command.Parameters.AddWithValue("@name", nameTextBox.Text.ToString());
                 command.Parameters.AddWithValue("@major", majorComboBox.Text.ToString());
-                command.Parameters.AddWithValue("@grade", studentNoTextBox.Text.Substring(0,4).ToString());
+                command.Parameters.AddWithValue("@dmajor", detailMajorComboBox.Text.ToString());
+                command.Parameters.AddWithValue("@sn", studentNoTextBox.Text.ToString());
+                command.Parameters.AddWithValue("@grade", gradeComboBox.Text.Substring(0,1).ToString());
                 command.ExecuteNonQuery();
 
+                MessageBox.Show("회원가입에 성공하였습니다.", "알림");
                 this.Close();
 
             } catch(Exception ex)
@@ -193,12 +196,37 @@ namespace tedt
                 }
                 else
                 {
-                    MessageBox.Show("학번이 유효합니다.", "알림");
+                    if (IsStudentNumberExists(studentNo))
+                    {
+                        MessageBox.Show("이미 가입된 학번이 있습니다.", "경고");
+                    }
+                    else
+                    {
+                        MessageBox.Show("학번이 유효합니다.", "알림");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "오류");
+            }
+        }
+
+        private bool IsStudentNumberExists(string studentNumber)
+        {
+            try
+            {
+                MySqlCommand checkStudentNoCommand = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE ustudentNumber = @studentNo", connection);
+                checkStudentNoCommand.Parameters.AddWithValue("@studentNo", studentNumber);
+
+                connection.Open();
+
+                int studentNoCount = Convert.ToInt32(checkStudentNoCommand.ExecuteScalar());
+                return studentNoCount > 0;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
