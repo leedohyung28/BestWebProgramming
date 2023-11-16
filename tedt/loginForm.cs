@@ -36,6 +36,16 @@ namespace tedt
                 txt.GotFocus += RemovePlaceholder;
                 txt.LostFocus += SetPlaceholder;
             }
+            loginTextBox.KeyDown += loginButton_KeyDown;
+            pwTextBox.KeyDown += loginButton_KeyDown;
+        }
+
+        private void loginButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터키를 입력받으면 실행
+            {
+                this.button1_Click(sender, e);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
