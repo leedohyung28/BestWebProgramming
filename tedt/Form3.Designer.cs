@@ -117,24 +117,24 @@
             // 
             this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
             this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.학점계산기ToolStripMenuItem.Text = "학점계산기";
+            this.학점계산기ToolStripMenuItem.Text = "시간표";
             this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 게시판ToolStripMenuItem
             // 
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
-            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.게시판ToolStripMenuItem.Text = "게시판";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
@@ -146,7 +146,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 종료ToolStripMenuItem
             // 

@@ -12,6 +12,8 @@ namespace tedt
 {
     public partial class Form3 : MetroFramework.Forms.MetroForm
     {
+        private User user = new User();
+
         Dictionary<string, int> student19 = new Dictionary<string, int>
         {
             {"기초 교양", 6},
@@ -24,10 +26,14 @@ namespace tedt
             {"IPP", 2},
             {"자유 선택", 9}
         };
-        public Form3()
+        public Form3(string id, string name, string grade, string major)
         {
             InitializeComponent();
             CreateProgressBars();
+            user.Id = id;
+            user.Name = name;
+            user.Grade = grade;
+            user.Major = major;
         }
 
         private void CreateProgressBars()
@@ -76,8 +82,14 @@ namespace tedt
         }
 
         private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { 
+            this.Visible = false;
+            timeTable form = new timeTable(user.Id, user.Name, user.Grade, user.Major);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
 
+            this.Close();
         }
 
         private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)

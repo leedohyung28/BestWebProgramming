@@ -287,7 +287,7 @@ namespace tedt
         private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form3 form = new Form3(user.Name, user.Id, user.Grade, user.Major);
+            Form3 form = new Form3(user.Id, user.Name, user.Grade, user.Major);
             form.Owner = this;
             form.ShowDialog();
             this.DialogResult = DialogResult.OK;
