@@ -99,6 +99,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.metroGrid1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -146,6 +147,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.metroGrid2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.metroGrid2.EnableHeadersVisualStyles = false;
             this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -566,47 +568,47 @@
             this.toolStripSeparator3,
             this.종료ToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(181, 132);
+            this.metroContextMenu1.Size = new System.Drawing.Size(135, 110);
             // 
             // 학점계산기ToolStripMenuItem
             // 
             this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
-            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.학점계산기ToolStripMenuItem.Text = "학점계산기";
             this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
             // 
             // 게시판ToolStripMenuItem
             // 
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
-            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.게시판ToolStripMenuItem.Text = "게시판";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(131, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(131, 6);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
