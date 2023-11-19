@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 676);
+            this.ClientSize = new System.Drawing.Size(1105, 488);
             this.Controls.Add(this.StudentIDLabel);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.label3);
