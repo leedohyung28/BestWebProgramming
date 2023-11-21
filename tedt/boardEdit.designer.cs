@@ -86,9 +86,7 @@
             this.SummitButton.Text = "제출";
             this.SummitButton.UseSelectable = true;
             this.SummitButton.Click += new System.EventHandler(this.SummitButton_Click);
-            // 
-            // Form3
-            // 
+            // boardEdit
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 328);
@@ -96,7 +94,8 @@
             this.Controls.Add(this.InputTextBox);
             this.Controls.Add(this.htmlLabel1);
             this.Movable = false;
-            this.Name = "Form3";
+            this.Name = "boardEdit";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "게시글 수정";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);

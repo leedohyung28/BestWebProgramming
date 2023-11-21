@@ -123,9 +123,8 @@
             this.SummitButton.Text = "저장";
             this.SummitButton.UseSelectable = true;
             this.SummitButton.Click += new System.EventHandler(this.SummitButton_Click);
-            // 
-            // Form2
-            // 
+
+            // boardWrite
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 384);
@@ -134,7 +133,8 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Form2";
+            this.Name = "boardWrite";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "게시글 작성";
             this.ResumeLayout(false);
             this.PerformLayout();

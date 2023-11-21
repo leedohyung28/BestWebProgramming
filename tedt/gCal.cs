@@ -142,11 +142,10 @@ namespace tedt
         private void CreateProgressBars(string id, string studentID)
         {
             Dictionary<string, int> selectedYear;
-            //if (studentID == "17") selectedYear = student17;
-            //else if (studentID == "18") selectedYear = student18;
-            if (studentID == "19") selectedYear = student19;
-            //else if(studentID == "20") selectedYear = student20;
-            //else if (studentID == "21") selectedYear = student21;
+            if (studentID == "18") selectedYear = student18;
+            else if (studentID == "19") selectedYear = student19;
+            else if(studentID == "20") selectedYear = student20;
+            else if (studentID == "21") selectedYear = student21;
             else if (studentID == "22") selectedYear = student22;
             else if (studentID == "23") selectedYear = student23;
             else selectedYear = student23; //기본 값으로 23학번
@@ -185,6 +184,8 @@ namespace tedt
                     {
                         totalPoint = Convert.ToInt32(result);
                     }
+                    //Debug.WriteLine($"Query Result: {totalPoint}");
+                    originalProgressValues[item.Key+"L"] = totalPoint;
                     // 라벨 생성 및 설정
                     Label progressLabel = new Label
                     {
@@ -212,7 +213,7 @@ namespace tedt
                     {
                         originalProgressValues[item.Key] = progressBar.Value;
                     }
-
+                    
                     // 프로그레스바 옆에 현재 값을 표시하는 라벨 생성 및 설정
                     Label valueLabel = new Label
                     {
@@ -315,8 +316,9 @@ namespace tedt
                 if (progressBar != null && label != null)
                 {
                     progressBar.Value = originalValue;
-                    label.Text = $"{originalValue} / {progressBar.Maximum}";
-                    UpdateLabelColor(label, originalValue, progressBar.Maximum);
+                    int totalPoint = originalProgressValues[key + "L"];
+                    label.Text = $"{totalPoint} / {progressBar.Maximum}";
+                    UpdateLabelColor(label, totalPoint, progressBar.Maximum);
                 }
             }
         }
@@ -330,8 +332,9 @@ namespace tedt
                 {
                     int newValue = Math.Min(originalProgressValues[key] + increment, progressBar.Maximum);
                     progressBar.Value = newValue;
-                    label.Text = $"{newValue} / {progressBar.Maximum}";
-                    UpdateLabelColor(label, newValue, progressBar.Maximum);
+                    int totalPoint = originalProgressValues[key + "L"];
+                    label.Text = $"{totalPoint+increment} / {progressBar.Maximum}";
+                    UpdateLabelColor(label, totalPoint+increment, progressBar.Maximum);
                 }
             }
         }
