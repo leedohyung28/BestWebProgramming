@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace tedt
 {
-    public partial class Form3 : MetroFramework.Forms.MetroForm
+    public partial class gCal : MetroFramework.Forms.MetroForm
     {
         private static string connectionString = "server=webp.flykorea.kr;user=bestwebp;database=bestwebpDB;port=13306;password=webp!@#012345;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
@@ -81,7 +81,7 @@ namespace tedt
             {"자유선택", 5}
         };
 
-        public Form3(string id, string name, string grade, string major)
+        public gCal(string id, string name, string grade, string major)
         {
             InitializeComponent();
             user.Id = id;
@@ -184,6 +184,8 @@ namespace tedt
                     {
                         totalPoint = Convert.ToInt32(result);
                     }
+                    //Debug.WriteLine($"Query Result: {totalPoint}");
+                    originalProgressValues[item.Key+"L"] = totalPoint;
                     // 라벨 생성 및 설정
                     Label progressLabel = new Label
                     {
@@ -211,7 +213,7 @@ namespace tedt
                     {
                         originalProgressValues[item.Key] = progressBar.Value;
                     }
-
+                    
                     // 프로그레스바 옆에 현재 값을 표시하는 라벨 생성 및 설정
                     Label valueLabel = new Label
                     {
@@ -314,8 +316,9 @@ namespace tedt
                 if (progressBar != null && label != null)
                 {
                     progressBar.Value = originalValue;
-                    label.Text = $"{originalValue} / {progressBar.Maximum}";
-                    UpdateLabelColor(label, originalValue, progressBar.Maximum);
+                    int totalPoint = originalProgressValues[key + "L"];
+                    label.Text = $"{totalPoint} / {progressBar.Maximum}";
+                    UpdateLabelColor(label, totalPoint, progressBar.Maximum);
                 }
             }
         }
@@ -329,8 +332,9 @@ namespace tedt
                 {
                     int newValue = Math.Min(originalProgressValues[key] + increment, progressBar.Maximum);
                     progressBar.Value = newValue;
-                    label.Text = $"{newValue} / {progressBar.Maximum}";
-                    UpdateLabelColor(label, newValue, progressBar.Maximum);
+                    int totalPoint = originalProgressValues[key + "L"];
+                    label.Text = $"{totalPoint+increment} / {progressBar.Maximum}";
+                    UpdateLabelColor(label, totalPoint+increment, progressBar.Maximum);
                 }
             }
         }
@@ -353,7 +357,7 @@ namespace tedt
             metroContextMenu1.Show(menuButton, 0, menuButton.Height);
         }
 
-        private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 시간표ToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             this.Visible = false;
             timeTable form = new timeTable(user.Id, user.Name, user.Grade, user.Major);
@@ -377,6 +381,17 @@ namespace tedt
 
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void 게시판ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            board form = new board(user.Id, user.Name, user.Grade, user.Major);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace tedt
 {
-    partial class Form3
+    partial class gCal
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuButton = new MetroFramework.Controls.MetroButton();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.학점계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.시간표ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.게시판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -87,7 +87,7 @@
             // 
             this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.학점계산기ToolStripMenuItem,
+            this.시간표ToolStripMenuItem,
             this.toolStripSeparator1,
             this.게시판ToolStripMenuItem,
             this.toolStripSeparator2,
@@ -97,12 +97,12 @@
             this.metroContextMenu1.Name = "metroContextMenu1";
             this.metroContextMenu1.Size = new System.Drawing.Size(139, 118);
             // 
-            // 학점계산기ToolStripMenuItem
+            // 시간표ToolStripMenuItem
             // 
-            this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
-            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.학점계산기ToolStripMenuItem.Text = "시간표";
-            this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
+            this.시간표ToolStripMenuItem.Name = "시간표ToolStripMenuItem";
+            this.시간표ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.시간표ToolStripMenuItem.Text = "시간표";
+            this.시간표ToolStripMenuItem.Click += new System.EventHandler(this.시간표ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -114,6 +114,7 @@
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
             this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.게시판ToolStripMenuItem.Text = "게시판";
+            this.게시판ToolStripMenuItem.Click += new System.EventHandler(this.게시판ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -148,7 +149,7 @@
             this.StudentIDLabel.TabIndex = 11;
             this.StudentIDLabel.Text = "NULL";
             // 
-            // Form3
+            // gCal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,8 +160,8 @@
             this.Controls.Add(this.User_ID);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form3";
-            this.Padding = new System.Windows.Forms.Padding(21, 75, 21, 20);
+            this.Name = "gCal";
+            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "KoreaTechHour";
             this.metroContextMenu1.ResumeLayout(false);
@@ -176,7 +177,7 @@
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroButton menuButton;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-        private System.Windows.Forms.ToolStripMenuItem 학점계산기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 시간표ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 게시판ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

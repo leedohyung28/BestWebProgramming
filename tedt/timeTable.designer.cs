@@ -121,7 +121,7 @@
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 27;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(696, 450);
+            this.metroGrid1.Size = new System.Drawing.Size(696, 455);
             this.metroGrid1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGrid1.TabIndex = 0;
             // 
@@ -170,7 +170,7 @@
             this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid2.RowTemplate.Height = 27;
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(696, 239);
+            this.metroGrid2.Size = new System.Drawing.Size(696, 243);
             this.metroGrid2.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGrid2.TabIndex = 1;
             // 
@@ -593,6 +593,7 @@
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
             this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.게시판ToolStripMenuItem.Text = "게시판";
+            this.게시판ToolStripMenuItem.Click += new System.EventHandler(this.게시판ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -623,6 +624,7 @@
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 24;
             this.metroComboBox1.Location = new System.Drawing.Point(1082, 54);
+            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(121, 30);
             this.metroComboBox1.TabIndex = 10;
@@ -641,7 +643,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1499, 900);
+            this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.metroLabel18);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.menuButton);
