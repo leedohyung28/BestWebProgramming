@@ -142,11 +142,10 @@ namespace tedt
         private void CreateProgressBars(string id, string studentID)
         {
             Dictionary<string, int> selectedYear;
-            //if (studentID == "17") selectedYear = student17;
-            //else if (studentID == "18") selectedYear = student18;
-            if (studentID == "19") selectedYear = student19;
-            //else if(studentID == "20") selectedYear = student20;
-            //else if (studentID == "21") selectedYear = student21;
+            if (studentID == "18") selectedYear = student18;
+            else if (studentID == "19") selectedYear = student19;
+            else if(studentID == "20") selectedYear = student20;
+            else if (studentID == "21") selectedYear = student21;
             else if (studentID == "22") selectedYear = student22;
             else if (studentID == "23") selectedYear = student23;
             else selectedYear = student23; //기본 값으로 23학번

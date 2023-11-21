@@ -48,35 +48,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 62);
+            this.label1.Location = new System.Drawing.Point(24, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 12);
+            this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "로그인 정보 : ";
             // 
             // User_ID
             // 
             this.User_ID.AutoSize = true;
-            this.User_ID.Location = new System.Drawing.Point(108, 62);
+            this.User_ID.Location = new System.Drawing.Point(123, 78);
             this.User_ID.Name = "User_ID";
-            this.User_ID.Size = new System.Drawing.Size(36, 12);
+            this.User_ID.Size = new System.Drawing.Size(42, 15);
             this.User_ID.TabIndex = 1;
             this.User_ID.Text = "NULL";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 93);
+            this.label3.Location = new System.Drawing.Point(113, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 12);
+            this.label3.Size = new System.Drawing.Size(102, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "학번 졸업요건";
             // 
             // menuButton
             // 
-            this.menuButton.Location = new System.Drawing.Point(183, 28);
+            this.menuButton.Location = new System.Drawing.Point(209, 35);
+            this.menuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(141, 19);
+            this.menuButton.Size = new System.Drawing.Size(161, 24);
             this.menuButton.TabIndex = 10;
             this.menuButton.Text = "메뉴";
             this.menuButton.UseSelectable = true;
@@ -84,6 +85,7 @@
             // 
             // metroContextMenu1
             // 
+            this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.학점계산기ToolStripMenuItem,
             this.toolStripSeparator1,
@@ -93,64 +95,64 @@
             this.toolStripSeparator3,
             this.종료ToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(123, 110);
+            this.metroContextMenu1.Size = new System.Drawing.Size(139, 118);
             // 
             // 학점계산기ToolStripMenuItem
             // 
             this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
-            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.학점계산기ToolStripMenuItem.Text = "시간표";
             this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // 게시판ToolStripMenuItem
             // 
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
-            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.게시판ToolStripMenuItem.Text = "게시판";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(135, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(135, 6);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
             // StudentIDLabel
             // 
             this.StudentIDLabel.AutoSize = true;
-            this.StudentIDLabel.Location = new System.Drawing.Point(55, 88);
+            this.StudentIDLabel.Location = new System.Drawing.Point(63, 110);
             this.StudentIDLabel.Name = "StudentIDLabel";
-            this.StudentIDLabel.Size = new System.Drawing.Size(40, 19);
+            this.StudentIDLabel.Size = new System.Drawing.Size(44, 20);
             this.StudentIDLabel.TabIndex = 11;
             this.StudentIDLabel.Text = "NULL";
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 488);
+            this.ClientSize = new System.Drawing.Size(1263, 610);
             this.Controls.Add(this.StudentIDLabel);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.label3);
@@ -158,7 +160,8 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form3";
-            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
+            this.Padding = new System.Windows.Forms.Padding(21, 75, 21, 20);
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "KoreaTechHour";
             this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
