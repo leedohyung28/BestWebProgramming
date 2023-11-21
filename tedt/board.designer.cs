@@ -81,6 +81,7 @@
             this.title,
             this.date,
             this.views});
+
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -112,44 +113,32 @@
             this.metroGrid1.Size = new System.Drawing.Size(553, 369);
             this.metroGrid1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGrid1.TabIndex = 0;
-            // 
             // userid
-            // 
             this.userid.DataPropertyName = "userid";
             this.userid.HeaderText = "userid";
             this.userid.MinimumWidth = 6;
             this.userid.Name = "userid";
             this.userid.ReadOnly = true;
-            // 
             // title
-            // 
+
             this.title.DataPropertyName = "title";
             this.title.HeaderText = "title";
             this.title.MinimumWidth = 6;
             this.title.Name = "title";
             this.title.ReadOnly = true;
-            // 
             // date
-            // 
             this.date.DataPropertyName = "date";
             this.date.HeaderText = "date";
             this.date.MinimumWidth = 6;
             this.date.Name = "date";
             this.date.ReadOnly = true;
-            // 
             // views
-            // 
             this.views.DataPropertyName = "views";
             this.views.HeaderText = "views";
             this.views.MinimumWidth = 6;
             this.views.Name = "views";
             this.views.ReadOnly = true;
-            // 
             // metroTextBox1
-            // 
-            // 
-            // 
-            // 
             this.metroTextBox1.CustomButton.Image = null;
             this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(-447, 2);
             this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,9 +167,8 @@
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // htmlLabel1
-            // 
+
             this.htmlLabel1.AutoScroll = true;
             this.htmlLabel1.AutoScrollMinSize = new System.Drawing.Size(61, 35);
             this.htmlLabel1.AutoSize = false;
@@ -192,9 +180,7 @@
             this.htmlLabel1.Size = new System.Drawing.Size(374, 42);
             this.htmlLabel1.TabIndex = 3;
             this.htmlLabel1.Text = "제목";
-            // 
             // htmlLabel2
-            // 
             this.htmlLabel2.AutoScroll = true;
             this.htmlLabel2.AutoScrollMinSize = new System.Drawing.Size(106, 25);
             this.htmlLabel2.AutoSize = false;
@@ -205,9 +191,8 @@
             this.htmlLabel2.Size = new System.Drawing.Size(374, 36);
             this.htmlLabel2.TabIndex = 4;
             this.htmlLabel2.Text = "글쓴이 | 시간";
-            // 
             // ModifyTextButton
-            // 
+
             this.ModifyTextButton.Location = new System.Drawing.Point(659, 476);
             this.ModifyTextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ModifyTextButton.Name = "ModifyTextButton";
@@ -217,12 +202,7 @@
             this.ModifyTextButton.UseSelectable = true;
             this.ModifyTextButton.Visible = false;
             this.ModifyTextButton.Click += new System.EventHandler(this.ModifyTextButton_Click);
-            // 
             // metroTextBox2
-            // 
-            // 
-            // 
-            // 
             this.metroTextBox2.CustomButton.Image = null;
             this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(98, 2);
             this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -234,8 +214,7 @@
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Enabled = false;
-            this.metroTextBox2.Lines = new string[] {
-        "글 내용"};
+            this.metroTextBox2.Lines = new string[] {"글 내용"};
             this.metroTextBox2.Location = new System.Drawing.Point(659, 182);
             this.metroTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox2.MaxLength = 32767;
@@ -252,9 +231,7 @@
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // MakeElementButton
-            // 
             this.MakeElementButton.Location = new System.Drawing.Point(23, 476);
             this.MakeElementButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MakeElementButton.Name = "MakeElementButton";
@@ -263,12 +240,7 @@
             this.MakeElementButton.Text = "글 쓰기";
             this.MakeElementButton.UseSelectable = true;
             this.MakeElementButton.Click += new System.EventHandler(this.MakeElementButton_Click);
-            // 
             // SearchStringTextBox
-            // 
-            // 
-            // 
-            // 
             this.SearchStringTextBox.CustomButton.Image = null;
             this.SearchStringTextBox.CustomButton.Location = new System.Drawing.Point(135, 2);
             this.SearchStringTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -295,9 +267,7 @@
             this.SearchStringTextBox.UseSelectable = true;
             this.SearchStringTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SearchStringTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // SearchElementButton
-            // 
             this.SearchElementButton.Location = new System.Drawing.Point(511, 476);
             this.SearchElementButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchElementButton.Name = "SearchElementButton";
@@ -306,9 +276,7 @@
             this.SearchElementButton.Text = "찾기";
             this.SearchElementButton.UseSelectable = true;
             this.SearchElementButton.Click += new System.EventHandler(this.SearchElementButton_Click);
-            // 
             // DeleteElementButton
-            // 
             this.DeleteElementButton.Location = new System.Drawing.Point(763, 476);
             this.DeleteElementButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteElementButton.Name = "DeleteElementButton";
@@ -318,9 +286,7 @@
             this.DeleteElementButton.UseSelectable = true;
             this.DeleteElementButton.Visible = false;
             this.DeleteElementButton.Click += new System.EventHandler(this.DeleteElementButton_Click);
-            // 
             // menuButton
-            // 
             this.menuButton.Location = new System.Drawing.Point(119, 34);
             this.menuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuButton.Name = "menuButton";
@@ -329,9 +295,7 @@
             this.menuButton.Text = "메뉴";
             this.menuButton.UseSelectable = true;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            // 
             // metroContextMenu1
-            // 
             this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.시간표ToolStripMenuItem,
@@ -343,45 +307,34 @@
             this.종료ToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
             this.metroContextMenu1.Size = new System.Drawing.Size(154, 118);
-            // 
             // 시간표ToolStripMenuItem
-            // 
             this.시간표ToolStripMenuItem.Name = "시간표ToolStripMenuItem";
             this.시간표ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.시간표ToolStripMenuItem.Text = "시간표";
             this.시간표ToolStripMenuItem.Click += new System.EventHandler(this.시간표ToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
-            // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(150, 6);
-            // 
             // 학점계산기ToolStripMenuItem
-            // 
             this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
             this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.학점계산기ToolStripMenuItem.Text = "학점계산기";
             this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
-            // 
             // toolStripSeparator2
-            // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(150, 6);
-            // 
+            
             // 로그아웃ToolStripMenuItem
-            // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
             this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
-            // 
+            
             // toolStripSeparator3
-            // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(150, 6);
-            // 
+
             // 종료ToolStripMenuItem
-            // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
             this.종료ToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.종료ToolStripMenuItem.Text = "종료";

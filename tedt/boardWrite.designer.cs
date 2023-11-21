@@ -123,9 +123,8 @@
             this.SummitButton.Text = "저장";
             this.SummitButton.UseSelectable = true;
             this.SummitButton.Click += new System.EventHandler(this.SummitButton_Click);
-            // 
+
             // boardWrite
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 384);

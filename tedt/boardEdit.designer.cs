@@ -86,9 +86,7 @@
             this.SummitButton.Text = "제출";
             this.SummitButton.UseSelectable = true;
             this.SummitButton.Click += new System.EventHandler(this.SummitButton_Click);
-            // 
             // boardEdit
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 328);
