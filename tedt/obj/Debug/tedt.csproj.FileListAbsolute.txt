@@ -80,7 +80,6 @@ C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.AssemblyReference.cache
-C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Form3.resources
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.Properties.Resources.resources
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.GenerateResource.cache
 C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.csproj.CoreCompileInputs.cache
@@ -376,3 +375,8 @@ D:\2019136028\3-2\고급웹프로그래밍\project\tedt\obj\Debug\tedt.csproj.Co
 D:\2019136028\3-2\고급웹프로그래밍\project\tedt\obj\Debug\tedt.csproj.CopyComplete
 D:\2019136028\3-2\고급웹프로그래밍\project\tedt\obj\Debug\tedt.exe
 D:\2019136028\3-2\고급웹프로그래밍\project\tedt\obj\Debug\tedt.pdb
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.board.resources
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.boardWrite.resources
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.boardEdit.resources
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.gCal.resources
+C:\Users\dhlee\Downloads\학교 공부\BestWebProgramming\tedt\obj\Debug\tedt.timeTable.resources

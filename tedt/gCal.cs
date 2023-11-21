@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace tedt
 {
-    public partial class Form3 : MetroFramework.Forms.MetroForm
+    public partial class gCal : MetroFramework.Forms.MetroForm
     {
         private static string connectionString = "server=webp.flykorea.kr;user=bestwebp;database=bestwebpDB;port=13306;password=webp!@#012345;";
         private MySqlConnection connection = new MySqlConnection(connectionString);
@@ -81,7 +81,7 @@ namespace tedt
             {"자유선택", 5}
         };
 
-        public Form3(string id, string name, string grade, string major)
+        public gCal(string id, string name, string grade, string major)
         {
             InitializeComponent();
             user.Id = id;
@@ -354,7 +354,7 @@ namespace tedt
             metroContextMenu1.Show(menuButton, 0, menuButton.Height);
         }
 
-        private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 시간표ToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             this.Visible = false;
             timeTable form = new timeTable(user.Id, user.Name, user.Grade, user.Major);
@@ -378,6 +378,17 @@ namespace tedt
 
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void 게시판ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            board form = new board(user.Id, user.Name, user.Grade, user.Major);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
     }

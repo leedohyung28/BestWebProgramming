@@ -1,6 +1,6 @@
 ﻿namespace tedt
 {
-    partial class Form3
+    partial class gCal
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuButton = new MetroFramework.Controls.MetroButton();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.학점계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.시간표ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.게시판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -85,7 +85,7 @@
             // metroContextMenu1
             // 
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.학점계산기ToolStripMenuItem,
+            this.시간표ToolStripMenuItem,
             this.toolStripSeparator1,
             this.게시판ToolStripMenuItem,
             this.toolStripSeparator2,
@@ -93,47 +93,48 @@
             this.toolStripSeparator3,
             this.종료ToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(123, 110);
+            this.metroContextMenu1.Size = new System.Drawing.Size(181, 132);
             // 
-            // 학점계산기ToolStripMenuItem
+            // 시간표ToolStripMenuItem
             // 
-            this.학점계산기ToolStripMenuItem.Name = "학점계산기ToolStripMenuItem";
-            this.학점계산기ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.학점계산기ToolStripMenuItem.Text = "시간표";
-            this.학점계산기ToolStripMenuItem.Click += new System.EventHandler(this.학점계산기ToolStripMenuItem_Click);
+            this.시간표ToolStripMenuItem.Name = "시간표ToolStripMenuItem";
+            this.시간표ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.시간표ToolStripMenuItem.Text = "시간표";
+            this.시간표ToolStripMenuItem.Click += new System.EventHandler(this.시간표ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 게시판ToolStripMenuItem
             // 
             this.게시판ToolStripMenuItem.Name = "게시판ToolStripMenuItem";
-            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.게시판ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.게시판ToolStripMenuItem.Text = "게시판";
+            this.게시판ToolStripMenuItem.Click += new System.EventHandler(this.게시판ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
@@ -146,7 +147,7 @@
             this.StudentIDLabel.TabIndex = 11;
             this.StudentIDLabel.Text = "NULL";
             // 
-            // Form3
+            // gCal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +158,7 @@
             this.Controls.Add(this.User_ID);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form3";
+            this.Name = "gCal";
             this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
             this.Text = "KoreaTechHour";
             this.metroContextMenu1.ResumeLayout(false);
@@ -173,7 +174,7 @@
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroButton menuButton;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-        private System.Windows.Forms.ToolStripMenuItem 학점계산기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 시간표ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 게시판ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

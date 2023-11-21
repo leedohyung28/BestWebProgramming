@@ -307,7 +307,7 @@ namespace tedt
         private void 학점계산기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form3 form = new Form3(user.Id, user.Name, user.Grade, user.Major);
+            gCal form = new gCal(user.Id, user.Name, user.Grade, user.Major);
             form.Owner = this;
             form.ShowDialog();
             this.DialogResult = DialogResult.OK;
@@ -328,6 +328,17 @@ namespace tedt
 
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void 게시판ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            board form = new board(user.Id, user.Name, user.Grade, user.Major);
+            form.Owner = this;
+            form.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
     }
