@@ -253,7 +253,7 @@ namespace tedt
                 string gDate = row.Cells["date"].Value.ToString();
                 string gContent = GetContentFromDatabase(gUser, gTitle, gDate);
 
-                using (gCal modifyForm = new gCal(Userid, gTitle, gContent, connectionString))
+                using (boardEdit modifyForm = new boardEdit(Userid, gTitle, gContent, connectionString))
                 {
                     modifyForm.FormClosed += (s, args) =>
                     {
