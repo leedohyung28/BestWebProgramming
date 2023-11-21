@@ -20,15 +20,45 @@ namespace tedt
         private ComboBox comboBoxMajorRequired;
         private Dictionary<string, int> originalProgressValues = new Dictionary<string, int>();
         private User user = new User();
-        Dictionary<string, int> student19 = new Dictionary<string, int>
-        {   
-            {"HRD필수", 6},
+        Dictionary<string, int> student18 = new Dictionary<string, int>
+        {
+             {"HRD필수", 6},
             {"HRD선택", 4},
             {"MSC", 30}, //MSC선수, MSC필수 통합
             {"교양", 29}, //교선, 교필 통합
             {"전공선택", 29}, //전선, 학부선 통합
             {"전공필수", 47}, //전필, 학부필 통합
             {"자유선택", 5}, //자선 변경
+        };
+        Dictionary<string, int> student19 = new Dictionary<string, int>
+        {   
+            {"HRD필수", 6},
+            {"HRD선택", 4},
+            {"MSC", 30}, 
+            {"교양", 29}, 
+            {"전공선택", 29},
+            {"전공필수", 47},
+            {"자유선택", 5},
+        };
+        Dictionary<string, int> student20 = new Dictionary<string, int>
+        {
+            {"HRD필수", 6},
+            {"HRD선택", 4},
+            {"MSC", 30},
+            {"교양", 29},
+            {"전공선택", 29},
+            {"전공필수", 47},
+            {"자유선택", 5},
+        };
+        Dictionary<string, int> student21 = new Dictionary<string, int>
+        {
+            {"HRD필수", 10},
+            {"HRD선택", 4},
+            {"MSC", 30},
+            {"교양", 25},
+            {"전공선택", 36},
+            {"전공필수", 40},
+            {"자유선택", 5},
         };
         Dictionary<string, int> student22 = new Dictionary<string, int>
         {
@@ -63,6 +93,7 @@ namespace tedt
             StudentIDLabel.Text = user.StudentID;
 
             CreateProgressBars(id, user.StudentID);
+            SetDefaultComboBoxValue();
         }
 
 
@@ -99,7 +130,15 @@ namespace tedt
             return yearString;
         }
 
-
+        private void SetDefaultComboBoxValue()
+        {
+            // Check if the comboBox has items to prevent exceptions
+            if (comboBoxMajorRequired.Items.Count > 0)
+            {
+                // Set the first item as default
+                comboBoxMajorRequired.SelectedIndex = 0;
+            }
+        }
         private void CreateProgressBars(string id, string studentID)
         {
             Dictionary<string, int> selectedYear;
