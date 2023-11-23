@@ -17,7 +17,7 @@ namespace tedt
         private static ChangeLabel changeLabel = new ChangeLabel();
         private UpdateGrid updateGrid = new UpdateGrid(changeLabel);
         private User user = new User();
-        string[] items = { "23_2", "23_1", "22_2", "22_1", "21_2", "21_1" };
+        string[] items = { "23_2", "23_1","22_Winter", "22_2", "22_1", "21_2", "21_1" };
 
         public timeTable() { }
 
