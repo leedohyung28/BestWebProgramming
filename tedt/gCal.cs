@@ -256,6 +256,7 @@ namespace tedt
                 // Add items to the ComboBox
                 comboBoxMajorRequired.Items.Add("미정");
                 comboBoxMajorRequired.Items.Add("4주");
+                comboBoxMajorRequired.Items.Add("8주");
                 comboBoxMajorRequired.Items.Add("4개월");
                 comboBoxMajorRequired.Items.Add("6개월");
                 comboBoxMajorRequired.SelectedIndexChanged += new EventHandler(ComboBoxMajorRequired_SelectedIndexChanged);
@@ -283,6 +284,12 @@ namespace tedt
             {
                 ResetProgressBarsToOriginal();
                 UpdateProgressBar("전공필수", 2);
+            }
+            else if(currentSelection == "8주")
+            {
+                ResetProgressBarsToOriginal();
+                UpdateProgressBar("전공필수", 2);
+                UpdateProgressBar("전공선택", 1);
             }
             else if (currentSelection == "4개월")
             {
