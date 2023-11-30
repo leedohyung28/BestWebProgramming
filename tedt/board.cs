@@ -94,7 +94,7 @@ namespace tedt
                     string sql = "UPDATE `GENERALFORUM` SET g_views = g_views + 1 WHERE g_user = @userId AND g_title = @title";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@userId", gUser);
-                    cmd.Parameters.AddWithValue("@title", title);
+                    cmd.Parameters.AddWithValue("@title", gTitle);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)

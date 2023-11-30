@@ -21,7 +21,7 @@ namespace tedt
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
             MySqlCommand command = connection.CreateCommand();
             connection.Open();
@@ -227,6 +227,18 @@ namespace tedt
             finally
             {
                 connection.Close();
+            }
+        }
+
+        private void pwCofirmCheck(object sender, EventArgs e)
+        {
+            if (pwBox.Text.ToString() != pwConfirmBox.Text.ToString())
+            {
+                MessageBox.Show("비밀번호가 다릅니다.", "경고");
+            }
+            else
+            {
+                MessageBox.Show("확인되었습니다.", "확인");
             }
         }
     }
