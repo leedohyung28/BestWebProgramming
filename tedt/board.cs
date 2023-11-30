@@ -29,6 +29,19 @@ namespace tedt
             // 폼의 생성자 또는 초기화 메서드에서
             SearchStringTextBox.KeyDown += new KeyEventHandler(SearchStringTextBox_KeyDown);
         }
+
+        private Image ResizeImage(Image originalImage, Size newSize)
+        {
+            Bitmap result = new Bitmap(newSize.Width, newSize.Height);
+
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                g.DrawImage(originalImage, 0, 0, newSize.Width, newSize.Height);
+            }
+
+            return result;
+        }
+
         public board(string userid, string username, string usergrade, string usermajor)
         {
             InitializeComponent();
@@ -37,7 +50,7 @@ namespace tedt
             SearchStringTextBox.KeyDown += new KeyEventHandler(SearchStringTextBox_KeyDown);
             Userid = userid;
             UN = username;
-            UG = usergrade; 
+            UG = usergrade;
             UM = usermajor;
         }
 
@@ -63,7 +76,7 @@ namespace tedt
                 string gContent = GetContentFromDatabase(gUser, gTitle, gDate);
                 metroTextBox2.Text = gContent; // 또는 적절한 방법으로 htmlPanel1에 표시
                 htmlLabel1.Text = "<b>" + gTitle;
-                htmlLabel2.Text = "<b> 사용자 : " + gUser + " | "+ gDate;
+                htmlLabel2.Text = "<b> 사용자 : " + gUser + " | " + gDate;
                 if (gUser.Equals(Userid))
                 {
                     ModifyTextButton.Visible = true;
@@ -82,6 +95,7 @@ namespace tedt
         {
             // DataGridView에서 현재 views 값 읽기
             int currentViews = Convert.ToInt32(metroGrid1.Rows[rowIndex].Cells["views"].Value);
+            int currentLikes = Convert.ToInt32(metroGrid1.Rows[rowIndex].Cells["likes"].Value); // 추가: 현재 좋아요 수
 
             // views 값을 1 증가시키기
             int newViews = currentViews + 1;
@@ -91,10 +105,11 @@ namespace tedt
                 try
                 {
                     conn.Open();
-                    string sql = "UPDATE `GENERALFORUM` SET g_views = g_views + 1 WHERE g_user = @userId AND g_title = @title";
+                    string sql = "UPDATE `GENERALFORUM` SET g_views = g_views + 1, g_likes = @newLikes WHERE g_user = @userId AND g_title = @title";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@userId", gUser);
                     cmd.Parameters.AddWithValue("@title", gTitle);
+                    cmd.Parameters.AddWithValue("@newLikes", currentLikes); // 추가: 현재 좋아요 수 그대로 유지
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -110,6 +125,7 @@ namespace tedt
             // DataGridView에 업데이트된 views 값 반영
             metroGrid1.Rows[rowIndex].Cells["views"].Value = newViews;
         }
+
 
         private string GetContentFromDatabase(string user, string title, string date)
         {
@@ -147,6 +163,11 @@ namespace tedt
         private void Form1_Load(object sender, EventArgs e)
         {
             getDB();
+            string imgFileName = "likeheart.png";
+            string imgPath = System.IO.Path.Combine(Application.StartupPath, imgFileName);
+
+            Image originalImage = Image.FromFile(imgPath);
+            likeButton.Image = ResizeImage(originalImage, likeButton.Size);
         }
 
         public void getDB()
@@ -156,7 +177,7 @@ namespace tedt
             try
             {
                 conn.Open();
-                string sql = "SELECT g_user, g_title, g_date, g_views FROM `GENERALFORUM`";
+                string sql = "SELECT g_user, g_title, g_date, g_views, g_likes FROM `GENERALFORUM`";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 using (MySqlDataReader rdr = cmd.ExecuteReader())
@@ -167,15 +188,15 @@ namespace tedt
                     dt.Columns.Add("title", typeof(string));
                     dt.Columns.Add("date", typeof(string)); // 적절한 데이터 타입으로 변경 가능
                     dt.Columns.Add("views", typeof(int)); // 적절한 데이터 타입으로 변경 가능
+                    dt.Columns.Add("likes", typeof(int)); // 추가: 좋아요 카운트
 
                     while (rdr.Read())
                     {
                         // DataTable에 새 행을 추가합니다.
-                        dt.Rows.Add(rdr["g_user"], rdr["g_title"], rdr["g_date"], rdr["g_views"]);
+                        dt.Rows.Add(rdr["g_user"], rdr["g_title"], rdr["g_date"], rdr["g_views"], rdr["g_likes"]);
                     }
                 }
                 metroGrid1.DataSource = dt;
-
             }
             catch (Exception ex)
             {
@@ -186,6 +207,7 @@ namespace tedt
                 conn.Close();
             }
         }
+
 
 
         private void SearchElementButton_Click(object sender, EventArgs e)
@@ -363,5 +385,7 @@ namespace tedt
         {
             this.Close();
         }
+
     }
+
 }
