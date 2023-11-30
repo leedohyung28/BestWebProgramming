@@ -17,7 +17,7 @@ namespace tedt
         private static ChangeLabel changeLabel = new ChangeLabel();
         private UpdateGrid updateGrid = new UpdateGrid(changeLabel);
         private User user = new User();
-        string[] items = { "23_2", "23_1","22_Winter", "22_2", "22_1", "21_2", "21_1" };
+        string[] items = { "23_Winter", "23_2", "23_Summer", "23_1", "22_Winter", "22_2", "22_Summer", "22_1", "21_Winter", "21_2", "21_Summer", "21_1", "20_Winter", "20_2", "20_Summer", "20_1" };
 
         public timeTable() { }
 
@@ -160,8 +160,8 @@ namespace tedt
 
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
-                    command.CommandText = "INSERT INTO APPLICATION (id, year, code, name, class, course, point, department, grade, professor, time) VALUES (@Id, @year, @Subject_Code, @Subject_Name, " +
-                        "@Subject_Class, @Course, @point, @Department, @Grade, @Professor, @Subject_Time)";
+                    command.CommandText = "INSERT INTO APPLICATION (id, year, code, name, class, course, point, department, grade, professor, time, major) VALUES (@Id, @year, @Subject_Code, @Subject_Name, " +
+                        "@Subject_Class, @Course, @point, @Department, @Grade, @Professor, @Subject_Time, @major)";
 
                     command.Parameters.AddWithValue("@Id", user.Id);
                     command.Parameters.AddWithValue("@year", selected);
@@ -174,6 +174,7 @@ namespace tedt
                     command.Parameters.AddWithValue("@Grade", row.Cells["Grade"].Value.ToString());
                     command.Parameters.AddWithValue("@Professor", row.Cells["Professor"].Value.ToString());
                     command.Parameters.AddWithValue("@Subject_Time", row.Cells["ClassTime"].Value.ToString());
+                    command.Parameters.AddWithValue("@major", user.Major.ToString());
                     command.ExecuteNonQuery();
 
                     connection.Close();

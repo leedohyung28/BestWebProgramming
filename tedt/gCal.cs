@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Reflection;
+using System.Xml.Linq;
+using Google.Protobuf.WellKnownTypes;
 
 
 namespace tedt
@@ -20,66 +23,47 @@ namespace tedt
         private ComboBox comboBoxMajorRequired;
         private Dictionary<string, int> originalProgressValues = new Dictionary<string, int>();
         private User user = new User();
-        Dictionary<string, int> student18 = new Dictionary<string, int>
+
+        Dictionary<string, int> studentNum;
+
+        private void FetchAndStoreStudentData(string studentNumber, string major)
         {
-             {"HRD필수", 6},
-            {"HRD선택", 4},
-            {"MSC", 30}, //MSC선수, MSC필수 통합
-            {"교양", 29}, //교선, 교필 통합
-            {"전공선택", 29}, //전선, 학부선 통합
-            {"전공필수", 47}, //전필, 학부필 통합
-            {"자유선택", 5}, //자선 변경
-        };
-        Dictionary<string, int> student19 = new Dictionary<string, int>
-        {   
-            {"HRD필수", 6},
-            {"HRD선택", 4},
-            {"MSC", 30}, 
-            {"교양", 29}, 
-            {"전공선택", 29},
-            {"전공필수", 47},
-            {"자유선택", 5},
-        };
-        Dictionary<string, int> student20 = new Dictionary<string, int>
-        {
-            {"HRD필수", 6},
-            {"HRD선택", 4},
-            {"MSC", 30},
-            {"교양", 29},
-            {"전공선택", 29},
-            {"전공필수", 47},
-            {"자유선택", 5},
-        };
-        Dictionary<string, int> student21 = new Dictionary<string, int>
-        {
-            {"HRD필수", 10},
-            {"HRD선택", 4},
-            {"MSC", 30},
-            {"교양", 25},
-            {"전공선택", 36},
-            {"전공필수", 40},
-            {"자유선택", 5},
-        };
-        Dictionary<string, int> student22 = new Dictionary<string, int>
-        {
-            {"HRD필수", 10},
-            {"HRD선택", 4},
-            {"MSC", 30 },
-            {"교양", 25 },
-            {"전공선택", 36 },
-            {"전공필수", 40 },
-            {"자유선택", 5}
-        };
-        Dictionary<string, int> student23 = new Dictionary<string, int>
-        {
-            {"HRD필수", 10},
-            {"HRD선택", 4},
-            {"MSC", 30 },
-            {"교양", 25 },
-            {"전공선택", 27 },
-            {"전공필수", 49 },
-            {"자유선택", 5}
-        };
+            try
+            {
+                connection.Open();
+
+                // 특정 학번과 전공에 대한 과목과 점수를 가져오는 SQL 쿼리
+                string sql = "SELECT sub, point, major FROM GR WHERE stNum = @stNum AND major = @major";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+                // SQL 인젝션 방지를 위해 파라미터 사용
+                cmd.Parameters.AddWithValue("@stNum", studentNumber);
+                cmd.Parameters.AddWithValue("@major", major);
+                
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // 딕셔너리 초기화
+                    studentNum = new Dictionary<string, int>();
+
+                    while (reader.Read())
+                    {
+                        string subject = reader.GetString("sub");
+                        int points = reader.GetInt32("point");
+                        //Debug.WriteLine($"쿼리 결과: {subject}");
+                        // 과목과 점수를 딕셔너리에 저장
+                        studentNum[subject] = points;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "오류 발생");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
         public gCal(string id, string name, string grade, string major)
         {
@@ -91,8 +75,10 @@ namespace tedt
 
             User_ID.Text = user.Id; //레이블 -> 사용자 계정
             StudentIDLabel.Text = user.StudentID;
+            label3.Text = $"학번            {user.Major} 졸업 요건";
 
-            CreateProgressBars(id, user.StudentID);
+            FetchAndStoreStudentData(user.StudentID, user.Major);
+            CreateProgressBars(id, user.StudentID, user.Major);
             SetDefaultComboBoxValue();
         }
 
@@ -139,9 +125,11 @@ namespace tedt
                 comboBoxMajorRequired.SelectedIndex = 0;
             }
         }
-        private void CreateProgressBars(string id, string studentID)
+        private void CreateProgressBars(string id, string studentID, string major)
         {
             Dictionary<string, int> selectedYear;
+            selectedYear = studentNum;
+            /*
             if (studentID == "18") selectedYear = student18;
             else if (studentID == "19") selectedYear = student19;
             else if(studentID == "20") selectedYear = student20;
@@ -149,7 +137,7 @@ namespace tedt
             else if (studentID == "22") selectedYear = student22;
             else if (studentID == "23") selectedYear = student23;
             else selectedYear = student23; //기본 값으로 23학번
-
+            */
             try
             {
                 connection.Open();
@@ -167,24 +155,28 @@ namespace tedt
                 connection.Close();
             }
 
-            int yPoint = 180; // 시작 y 위치
+            int yPoint = 150; // 시작 y 위치
             try
             {
                 connection.Open();
-
                 foreach (var item in selectedYear)
                 {
-                    string sql = "SELECT SUM(point) AS TotalPoints FROM APPLICATION WHERE id = @id AND course = @course";
+                    /*
+                        ToDo 리스트
+
+                     */
+                    string sql = "SELECT SUM(point) AS TotalPoints FROM APPLICATION WHERE id = @id AND course = @course AND major = @major";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     cmd.Parameters.AddWithValue("@id", id); // id 파라미터 값을 설정합니다.
                     cmd.Parameters.AddWithValue("@course", item.Key); // course 파라미터 값을 설정합니다.
+                    cmd.Parameters.AddWithValue("@major", major); // course 파라미터 값을 설정합니다.
                     object result = cmd.ExecuteScalar();
                     int totalPoint = 0;
                     if (result != null && result != DBNull.Value)
                     {
                         totalPoint = Convert.ToInt32(result);
                     }
-                    //Debug.WriteLine($"Query Result: {totalPoint}");
+                    //Debug.WriteLine($"Query Result: {item.Key}");
                     originalProgressValues[item.Key+"L"] = totalPoint;
                     // 라벨 생성 및 설정
                     Label progressLabel = new Label
