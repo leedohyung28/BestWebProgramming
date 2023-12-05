@@ -397,6 +397,7 @@
             this.likeButton.Size = new System.Drawing.Size(25, 26);
             this.likeButton.TabIndex = 12;
             this.likeButton.TabStop = false;
+            this.likeButton.Click += new System.EventHandler(this.likeButton_Click);
             // 
             // board
             // 

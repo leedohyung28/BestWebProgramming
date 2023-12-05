@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static MetroFramework.Drawing.MetroPaint.ForeColor;
 
@@ -309,21 +310,23 @@ namespace tedt
             if (metroGrid1.CurrentRow != null)
             {
                 DataGridViewRow row = metroGrid1.CurrentRow;
-                string gUser = row.Cells["userid"].Value.ToString();
-                string gTitle = row.Cells["title"].Value.ToString();
-                string gDate = row.Cells["date"].Value.ToString();
-
                 MySqlConnection conn = new MySqlConnection(connectionString);
                 try
                 {
                     conn.Open();
-                    string sql = "DELETE FROM `GENERALFORUM` WHERE g_user = @user AND g_title = @title AND g_date = @date";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@user", gUser);
-                    cmd.Parameters.AddWithValue("@title", gTitle);
-                    cmd.Parameters.AddWithValue("@date", gDate);
 
-                    cmd.ExecuteNonQuery();
+                    string sql = "SELECT g_num FROM GENERALFORUM WHERE g_title = @title AND g_user = @user";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@title", row.Cells["title"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@user", row.Cells["userid"].Value.ToString());
+
+                    int postId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    string sql2 = "DELETE FROM `GENERALFORUM` WHERE g_num = @postId; DELETE FROM UserLikes WHERE PostId = @postId";
+                    MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                    cmd2.Parameters.AddWithValue("@postId", postId);
+
+                    cmd2.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -386,6 +389,45 @@ namespace tedt
             this.Close();
         }
 
-    }
+        private void likeButton_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            DataGridViewRow row = metroGrid1.CurrentRow;
+            try
+            {
+                conn.Open();
+                string sql = "SELECT g_num FROM GENERALFORUM WHERE g_title = @title AND g_user = @user";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@title", row.Cells["title"].Value.ToString());
+                cmd.Parameters.AddWithValue("@user", row.Cells["userid"].Value.ToString());
 
+                int postId = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                string exsql = "SELECT COUNT(*) FROM UserLikes WHERE UserId = @userId AND PostId = @postId";
+                MySqlCommand excmd = new MySqlCommand(exsql, conn);
+                excmd.Parameters.AddWithValue("@postId", postId);
+                excmd.Parameters.AddWithValue("@userId", row.Cells["userid"].Value.ToString());
+
+                int cnt = Convert.ToInt32(excmd.ExecuteScalar());
+                if (cnt != 0) throw new Exception("이미 좋아요한 게시글입니다.");
+
+                string sql2 = "INSERT INTO UserLikes (UserId, PostId) VALUES (@userId, @postId); UPDATE GENERALFORUM SET g_likes = g_likes + 1 WHERE g_num = @postId;";
+                MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                cmd2.Parameters.AddWithValue("@userId", row.Cells["userid"].Value.ToString());
+                cmd2.Parameters.AddWithValue("@postId", postId);
+                cmd2.ExecuteNonQuery();
+
+                
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message, "오류");
+            }
+            finally { 
+                conn.Close();
+                getDB();
+            }
+
+        }
+    }
 }

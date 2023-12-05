@@ -50,7 +50,7 @@ namespace tedt
                 try
                 {
                     conn.Open();
-                    string sql = "INSERT INTO GENERALFORUM (g_num, g_user, g_title, g_content) VALUES (0, @user, @title, @content)";
+                    string sql = "INSERT INTO GENERALFORUM (g_user, g_title, g_content) VALUES (@user, @title, @content)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@user", Userid);
                     cmd.Parameters.AddWithValue("@title", title);
