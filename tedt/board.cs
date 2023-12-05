@@ -165,17 +165,19 @@ namespace tedt
         private void Form1_Load(object sender, EventArgs e)
         {
             getDB();
+            string iFN = "nameLogo.png";
+            string iP = System.IO.Path.Combine(Application.StartupPath, iFN);
+
+            Image oI = Image.FromFile(iP);
+            pictureBox.Image = ResizeImage(oI, pictureBox.Size);
+
             string imgFileName = "likeheart.png";
             string imgPath = System.IO.Path.Combine(Application.StartupPath, imgFileName);
 
             Image originalImage = Image.FromFile(imgPath);
             likeButton.Image = ResizeImage(originalImage, likeButton.Size);
 
-            string iFN = "nameLogo.png";
-            string iP = System.IO.Path.Combine(Application.StartupPath, iFN);
-
-            Image oI = Image.FromFile(iP);
-            likeButton.Image = ResizeImage(oI, likeButton.Size);
+            
 
         }
 
