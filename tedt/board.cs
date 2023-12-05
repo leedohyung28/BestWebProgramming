@@ -23,6 +23,7 @@ namespace tedt
         private string UN;
         private string UG;
         private string UM;
+
         public board()
         {
             InitializeComponent();
@@ -169,6 +170,13 @@ namespace tedt
 
             Image originalImage = Image.FromFile(imgPath);
             likeButton.Image = ResizeImage(originalImage, likeButton.Size);
+
+            string iFN = "nameLogo.png";
+            string iP = System.IO.Path.Combine(Application.StartupPath, iFN);
+
+            Image oI = Image.FromFile(iP);
+            likeButton.Image = ResizeImage(oI, likeButton.Size);
+
         }
 
         public void getDB()

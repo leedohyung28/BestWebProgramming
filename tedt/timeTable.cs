@@ -21,6 +21,27 @@ namespace tedt
 
         public timeTable() { }
 
+        private void timetable_Load(object sender, EventArgs e)
+        {
+            string imgFileName = "nameLogo.png";
+            string imgPath = System.IO.Path.Combine(Application.StartupPath, imgFileName);
+
+            Image originalImage = Image.FromFile(imgPath);
+            pictureBox.Image = ResizeImage(originalImage, pictureBox.Size);
+        }
+
+        private Image ResizeImage(Image originalImage, Size newSize)
+        {
+            Bitmap result = new Bitmap(newSize.Width, newSize.Height);
+
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                g.DrawImage(originalImage, 0, 0, newSize.Width, newSize.Height);
+            }
+
+            return result;
+        }
+
         public timeTable(string id, string name, string grade, string major)
         {
             InitializeComponent();

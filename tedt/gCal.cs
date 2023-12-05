@@ -26,6 +26,18 @@ namespace tedt
 
         Dictionary<string, int> studentNum;
 
+        private Image ResizeImage(Image originalImage, Size newSize)
+        {
+            Bitmap result = new Bitmap(newSize.Width, newSize.Height);
+
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                g.DrawImage(originalImage, 0, 0, newSize.Width, newSize.Height);
+            }
+
+            return result;
+        }
+
         private void FetchAndStoreStudentData(string studentNumber, string major)
         {
             try
@@ -349,6 +361,11 @@ namespace tedt
         private void Form3_Load(object sender, EventArgs e)
         {
             comboBoxMajorRequired.SelectedIndex = 0;
+            string imgFileName = "nameLogo.png";
+            string imgPath = System.IO.Path.Combine(Application.StartupPath, imgFileName);
+
+            Image originalImage = Image.FromFile(imgPath);
+            pictureBox.Image = ResizeImage(originalImage, pictureBox.Size);
         }
 
         private void menuButton_Click(object sender, EventArgs e)
