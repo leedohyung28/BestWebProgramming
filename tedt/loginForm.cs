@@ -22,6 +22,18 @@ namespace tedt
         const string IdPlaceholder = "아이디 입력";
         const string PwPlaceholder = "비밀번호 입력";
 
+        private Image ResizeImage(Image originalImage, Size newSize)
+        {
+            Bitmap result = new Bitmap(newSize.Width, newSize.Height);
+
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                g.DrawImage(originalImage, 0, 0, newSize.Width, newSize.Height);
+            }
+
+            return result;
+        }
+
         public loginForm()
         {
             InitializeComponent();
@@ -105,7 +117,11 @@ namespace tedt
 
         private void loginForm_Load(object sender, EventArgs e)
         {
+            string imgFileName = "logo.png";
+            string imgPath = System.IO.Path.Combine(Application.StartupPath, imgFileName);
 
+            Image originalImage = Image.FromFile(imgPath);
+            logo.Image = ResizeImage(originalImage, logo.Size);
         }
 
         private void RemovePlaceholder(object sender, EventArgs e)
