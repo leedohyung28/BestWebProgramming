@@ -50,6 +50,7 @@ namespace tedt
             }
             loginTextBox.KeyDown += loginButton_KeyDown;
             pwTextBox.KeyDown += loginButton_KeyDown;
+            CreateFooter();
         }
 
         private void loginButton_KeyDown(object sender, KeyEventArgs e)
@@ -149,5 +150,24 @@ namespace tedt
                 }
             }
         }
+        private void CreateFooter()
+        {
+            Panel footerPanel = new Panel();
+            footerPanel.Dock = DockStyle.Bottom;
+            footerPanel.Height = 50;
+            footerPanel.BackColor = Color.Gray;
+            footerPanel.Size = new Size(this.ClientSize.Width, 40);
+
+            Label copyrightLabel = new Label();
+            copyrightLabel.Text = "COPYRIGHT © 2023. KoreaTechHour All rights reserved.";
+            copyrightLabel.Dock = DockStyle.Fill;
+            copyrightLabel.TextAlign = ContentAlignment.MiddleCenter;
+            copyrightLabel.ForeColor = Color.White;
+
+            footerPanel.Controls.Add(copyrightLabel);
+
+            this.Controls.Add(footerPanel);
+        }
+
     }
 }
