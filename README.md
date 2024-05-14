@@ -2,6 +2,12 @@
 성공적인 졸업을 위한 도우미
 
 ---
+### requirements
+- Visual Studio 2022
+- Nuget - MetroFramework 설치
+- Nuget - MetroModernUI 설치
+
+---
 ### 👥 참여인원
 - 2018136080 이도형
 - 2019136007 고진혁
